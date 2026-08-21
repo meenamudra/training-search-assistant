@@ -1,0 +1,51 @@
+Configure a Self Service approval workflow
+
+After you've enabled the Self Service feature, you can configure an approval workflow. This gives app owners the ability to grant user access and assign entitlements. This action shifts the work of handling app requests from your IT group to the app owners.
+This workflow can't be used with apps that have required personal attributes.
+Before you begin
+
+Ensure that you're signed in as a super or app admin.
+Ensure that the Self Service feature is enabled in your org. See Configure your org for Self Service.
+Start this task
+
+In the Admin Console, go to ApplicationsApplications.
+Search for and select the app integration that you want to configure.
+Click the Assignments tab.
+In the SELF SERVICE section, click Edit.
+In the Requests section, set Allow user to request app to Yes.
+Optional. Enter a note for the requester that describes the integration or gives instructions to the user making the request. The maximum length is 500 characters.
+In the Approval section, select Required.
+If you decide to change an app integration's approval status from Required to Not Required, any outstanding approval requests are deleted. For admins, a Deleted message appears in the Okta System Logs. Okta doesn't notify end users of the request deletion.
+For Send app requests to, specify a user or group to approve app requests.
+Select Users or Groups from the dropdown list.
+Enter the user or group name in the field. Select the matching user or group from the list.
+Groups designated as approvers can't contain more than 100 members.
+Select the approver rights from the Entitlements dropdown list.
+Hidden: The approver can't view account attributes.
+Read: The approver can view account attributes but can't modify them.
+Write: The approver can edit account attributes.
+Optional. Create an approval chain by adding more users or groups. To change the order of the approvers, click the dotted handle to the left of the step number. Drag the line to the desired position. An approval chain can't exceed 10 levels, and you can't enter the same user or group more than once.
+A best practice is to set up the approval chain to satisfy any provisioning requirements for the app integration.
+If app integration supports provisioning and has required attributes that need to be specified when assigned, then at least one of the approvers needs to edit and set these user attributes.
+If the app integration doesn't support automated provisioning, the final approval step can also serve as the provisioning step. Select an admin who can provision the user account in the external app account as the final approver. This admin can then provision the user account and approve the request, giving the end user immediate single sign-on access through the app integration.
+For If request is approved, specify which email notifications Okta sends when the request is approved. The requester is automatically notified in their dashboard when Okta adds the app integration to their dashboard.
+Select any combination of the following options:
+Send email to requester: Select this option to send an approval/denial notification to the requester.
+Send email to approvers: Select this option to send an approval/denial notification to the approvers.
+Send email to others: Select this option to send an approval or denial notification to the email addresses you provide.
+For If request is denied, specify which email notifications Okta sends when the request is denied. The requester doesn't receive a notification in their dashboard if their request is denied.
+Send email to requester: Select this option to send a denial notification to the requester.
+Send email to approvers: Select this option to send a denial notification to the approvers.
+Send email to others: Select this option to send a denial notification to the email addresses you provide.
+For Approver must respond within, select the window of time that each approver has available to respond to the request:
+1 Week: Each approver has one week to respond to an approval request.
+30 Days: Each approver has 30 days to respond to an approval request.
+Custom time period: Specify the length of time in days or weeks that each approver has to respond to an approval request.
+The configurable time window applies to each step in the approval chain. For example, if you specify one week as the approval time and there are multiple approvers, each approver is given a week to respond. If there are three approvers, then the entire chain could take three weeks to approve.
+When an approval request expires, Okta cancels the request and doesn't grant the end user access to the requested app. Okta logs requests that run out of time differently than requests that get explicitly denied.
+For If request expires, specify which email notifications Okta sends when the request expires:
+Send email to requester: Select this option to send a request expiration notification to the requester.
+Send email to approvers: Select this option to send a request expiration notification to the approvers.
+Send email to others: Select this option to send a request expiration to the email addresses you provide.
+Admins can use request windows to set up a service-level agreement (SLA) for requests, and expiration notifications can handle situations in which an approver is unavailable. Okta recommends that you notify your support organization about the request windows and approval chain for the app integration so that they can follow up with the requester and manually approve the request if needed.
+Click Save.

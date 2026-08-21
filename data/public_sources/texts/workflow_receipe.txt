@@ -1,0 +1,99 @@
+Workflow recipe: Managing your escalation queue
+
+All Suites	Team, Growth, Professional, Enterprise, or Enterprise Plus
+Support	Team, Professional, or Enterprise
+When you deal with a lot of customers, it's very easy for some of the more upset ones to fall through the cracks. More often than not, you can prevent upsetting customers by keeping track of your escalated tickets. This support tip will help you create triggers to escalate your tickets more effectively.
+
+Custom triggers are only available on the Team, Professional, and Enterprise plans.
+
+This tip contains the following sections:
+Creating your group
+Creating your triggers
+Creating your view
+Creating your group
+
+Before you can create your triggers, you need to create an Escalations group.
+In Admin Center, click  People in the sidebar, then select Team > Groups.
+Click Add group.
+Name the group Escalations, then select agents you want to handle escalated tickets.
+When you're finished, click Save.
+Creating your triggers
+
+You can manage your escalated tickets with three types of triggers. For more information on creating custom triggers see, Streamlining workflow with ticket updates and triggers.
+
+The trigger types are:
+Escalation triggers
+Bad CSAT triggers
+Agent touch triggers
+Escalation triggers
+
+Your first trigger will escalate tickets based on the text your requester uses in their ticket.
+
+Create a new trigger and enter a name
+Under Meet ALL of the following conditions, add the below conditions:
+Ticket > Status category | Less than | Solved
+Ticket > Tags | Contains none of the following | escalated_customer
+Note: It is important to add this trigger so you create a nullifying condition to prevent the trigger from running over and over again.
+Under Meet ANY of the following conditions, add Ticket > Comment Text | Contains at least one of the following words | Enter common words or phrases upset customers use
+Under Actions, add the below:
+Ticket > Add Tags | escalated_customer
+Ticket > Priority | Urgent
+Ticket > Group | Escalations
+Click Create trigger
+
+Bad CSAT triggers
+
+Your second set of triggers will escalate tickets with poor satisfaction ratings both with and without comments.
+
+Without comments
+
+Create a new trigger
+Name the trigger Bad CSAT without comment
+Under Meet ALL of the following conditions, add the below conditions:
+Ticket > Status category | Less than | Solved
+Ticket > Tags | Contains none of the following | Bad_CSAT_no_comment
+Ticket > Satisfaction | Is | Bad
+Under Actions, add Ticket > Add tags | Bad_CSAT_no_comment
+Click Create trigger
+
+With comments
+
+Create a new trigger
+Name the trigger Bad CSAT with comment
+Under Meet ALL of the following conditions, add the below conditions:
+Ticket > Status category | Less than | Solved
+Ticket > Tags | Contains none of the following | Bad_CSAT_with_comment
+Ticket > Satisfaction | Is | Bad with comment
+Under Actions, add Ticket > Add tags | Bad_CSAT_with_comment
+Click Create trigger
+
+Agent touches
+
+There is one last important trigger to add. Adding a trigger based on more than three agent touches is important because statistically, the chances of having a great customer satisfaction rating drop drastically after three customer interactions with the same requester.
+Create a new trigger
+Under Meet ALL of the following conditions, add the below:
+Ticket > Status category | Less than | Solved
+Ticket > Tags | Contains none of the following | 3touch_or_more
+Ticket > Agent replies | Greater than | 3
+Under Actions, add the below:
+Ticket > Group | Escalations
+Ticket > Add Tags | 3touch_or_more 
+Click Create triggerEscalated 3 agent replie
+
+Creating your view
+
+You can now create a view for your Escalations group. Creating a view will enable your agents to easily identify the tickets that need their attention.
+
+Create a new view and enter a name
+In Who has access, select Agents in specific groups, then under Choose which groups have access, select Escalations
+Note: You want to select this group to prevent agents who do not handle escalations from having access to the tickets.
+Under Meet ALL of the following conditions, add Ticket > Tags | Enter the below tags:
+escalated_customer
+3touch_or_more
+Bad_CSAT_no_comment
+Bad_CSAT_with_comment
+Under Group by select Latest Update
+Under Order by, select ID
+Click Save
+
+This process is going to solve many of your escalations from wasting your time, the customer's time, and everyone's sanity. You can prevent customers from falling through the cracks, by placing an urgent status on them, as well as escalating them to a specific group of agents trained to solve escalated tickets.

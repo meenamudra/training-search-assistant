@@ -1,0 +1,89 @@
+Request type settings
+
+The Okta Workflows option is only available in the Access Requests console if you have enabled the Okta Workflows actions in Access Requests and Assign admin roles to apps features for your org, and assigned Okta Access Request OAuth app as an admin. Okta Workflows actions in Access Requests is an Early Access feature. To learn how to enable it, see Manage Early Access and Beta features. Also, see Before you begin.
+General settings
+
+Setting	Action
+Icon	Select an icon to identify the request type
+Name	Specify a name to identify the request type
+Description	Enter a description
+Team	Select a team to manage the request type. Any requests that use this request type are assigned to this team.
+Audience	
+Select a specific Okta group allowed to submit requests using this request type or make it available to everyone within your Okta org
+If you've enabled Unified requester experience and specify a group or team, the requests type won't be available in the resource catalog on the End-user Dashboard for users who aren't members of that group or team.
+Mark as done automatically	Enable to automatically close the request after all of the questions and tasks are complete
+Note: This setting requires at least one task or question assigned to an approver
+Question settings
+
+Setting	Action
+Text	Specify the default text displayed in the question
+Make it a required field	Select to mark the question as needed
+Type	Specify the input type for the question. Select one of the following options:
+Text: Allows users to enter up to 100 characters
+Date: Allows users to specify a date
+Dropdown: Allows users to select from a predefined list
+Custom options	Click Add option to specify one or more custom choices available for your end users to select. You can't reuse the custom options you define here in another request type. Create a custom list if you want to reuse custom options in multiple request types. See Create a resource list.
+This field is available after setting the Type setting to Dropdown.
+If you allow Multi-select, ensure that the custom options that you enter don't include commas. Users won't be able to respond to the question otherwise.
+Configuration items	Specify a configuration list synced from an existing connection. See Create a resource list.
+This field is available after setting the Type setting to Dropdown.
+If you allow Multi-select, ensure that the configuration list doesn't include items whose names contain a comma. Users won't be able to respond to the question otherwise.
+Assigned to	Specify the person, or Okta group responsible for completing the task.
+Task settings
+
+Add tasks to prompt actions from a user.
+Setting	Action
+Text	Specify the default text displayed in the task
+Make it a required field	Select to mark the task as needed
+Type	Specify the input type for the task. Select one of the following options:
+Custom Task: Assigns the task to a user for action
+Approval Task: Assigns the task to a user or group for review and approval
+Action Task: Adds specific actions related to a configured integration. The system can complete these tasks automatically or assign them to a team. The following Okta actions are available:
+Assign individual app to a user
+Assign app to a group
+Run a workflow
+List groups assigned to user
+List groups assigned to app
+Remove user from a group
+List apps assigned to user
+Remove user from app
+Before adding action tasks, admins must manually enable access to third-party integrations for the related team. See Create an Access Requests team.
+If an automated task doesn't complete, check that the questions and other tasks in the request are complete. Access Requests automatically runs the task after a request assignee enters the missing information. Request assignees can also run a delegated workflow manually by selecting Run manually or cancel the action without running the flow by selecting Cancel action.
+Assigned to	Specify the person, Okta group, or group owner responsible for completing the task
+Due date	Specify a time-frame to complete the task within
+Timer settings
+
+Optional. Add a timer to control the flow and timing of follow-up actions.
+Timers can last for up to 90 days. If a duration or date is specified outside the limit, the timer still ends after 90 days. After the timer expires, the request begins any followup actions. The timer ignores any changes to the request that would change the end date of the timer.
+Timer type	Action
+End after duration	Select to end the timer after a specified number of days, hours, or minutes.
+Under How long should this timer be?, enter a value and choose a unit of time.
+End on Date	Select to end the timer on a specific date. The timer ends at 12:00am in the requester's time zone.
+Under End this time using, select an existing date field, or create a field. When the system processes a request, the date specified in this field controls when the timer ends.
+Note: If the request specifies a date in the past, the timer ends immediately.
+Operators
+
+Operator	Input type
+is*	Text, Date, and Dropdown
+is not*
+Text, Date, and Dropdown
+in configuration list
+Dropdown
+not in configuration list
+Dropdown
+is after
+Date
+is before
+Date
+is in between
+Date
+contains text
+Text
+does not contain text
+Text
+includes
+Dropdown
+This option is available only if you've enabled the Multi-select? option.
+is not empty
+Text, Date, and Dropdown
+* For custom and action tasks, the operator label is Completed. For approval tasks, the operator labels are is completed, is approved, and is denied.

@@ -1,0 +1,10 @@
+Save Time by Creating Custom Pipeline Views and Filters
+Sales managers and reps can save their most frequently used pipeline views to avoid recreating them each time they visit Pipeline Inspection. For example, create custom filters for new business, teams, time periods, product types, and more.
+
+Where: This change applies to Sales Cloud in Lightning Experience in Performance and Unlimited editions.
+
+Who: To use Pipeline Inspection, users must have the Pipeline Inspection permission set. To create and edit all types of list views, users must have the Create and Customize List Views permission. To create or edit public pipeline views, users must have the Modify Public List Views permission.
+
+How: You create list views similarly to the way you create them in other objects.
+
+To create pipeline views (1), use the List View Controls menu under the gear icon (2) to create, clone, or delete pipeline views. Add filters to view the opportunities that meet your filter criteria. Using the filter panel (3), you can add time period and user filters. And you can add even more criteria such as accounts, amounts, and record types.

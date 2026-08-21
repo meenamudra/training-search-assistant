@@ -1,0 +1,55 @@
+Access Requests
+
+Directly integrated into an Okta org, Access Requests automates the process of requesting access to apps, groups, and entitlement bundles. Access Requests delivers a simplified and frictionless approach that automatically routes user requests to one or more approvers for action.
+This allows Access Requests to eliminate the challenges common in more traditional request management processes:
+Poor request experience
+Risk of human error
+Decreased IT productivity
+Complex and rigid processes
+Audit and compliance deficiencies
+To streamline access requests for admin roles, see Govern Okta admin roles and Access Requests for admin roles instead.
+As a super admin, after you enable the Access request conditions and Resource catalog feature, you can use conditions and request types to streamline requests. Access requests admins who also have the app admin role assignment can create and manage conditions as well.
+Conditions
+Conditions are rules that define who can request access, the level of access that they can request, the duration of access, and the approval sequence for each app directly from the app's profile page in your Admin Console. An approval sequence is a linear series of steps like questions, Okta Workflows, approvals, and tasks. These steps govern the information that specific users must provide, the users responsible for approving or denying the request, and any actions that must be completed.
+When you use conditions to manage access to a resource, requesters can directly go to the End-User Dashboard, select the resource's tile, and then enter the required information to request access.
+If you're new to Access Requests, use conditions to manage access requests first.
+Request types
+Request types are structured flows that define the lifecycle of a request. These flows are made of steps like questions, tasks, and timers. You can associate a request type with a resource (apps, groups, entitlement bundles) using a configuration list. Each Access Requests team owns and manages multiple request types and associated requests. You can also set up some automated actions in Okta and in integrated external systems like Jira and ServiceNow.
+With request types, the requesters go to the Okta Access Requests web app from their End-User Dashboard, select a request type, and then enter the required information to request access. Requesters can also request access from Slack or Microsoft Teams (if integrated with Access Requests).
+You can't create request types to manage access requests for Okta admin role bundles. Also, groups that grant Okta admin roles can't be assigned using access requests that are managed by request types. If users request such groups, they get an error on the request details page of their request.
+If you've enabled Unified requester experience for your org, the requesters can directly go to the End-User Dashboard, select a request type, and then enter the required information to request access. They can also use Slack and Microsoft Teams to request access to resources governed by access request conditions.
+Benefits
+
+Self-service automation
+Build no-code processes to define users who can request access to which resources, users who are responsible for approving the request, and the duration of access to the resource. This allows users to request access to resources in a self-service manner.
+Multi-step request routing
+Using request types or approval sequences, you can automatically delegate manual tasks like providing context or approving a request to requesters, approvers, or task assignees. You can assign tasks to specific users to ensure critical requests receive the necessary oversight and thorough review. You can also delegate critical governance tasks to maintain business continuity when approvers or task assignees are unavailable and escalate stalled tasks to help prevent bottlenecks. In the approval sequence or request type, you can also configure triggers that run an Okta Workflows delegated flow to take custom actions.
+Omnichannel support
+Users can interact or approve access requests from the Okta Access Requests web app Slack or Microsoft Teams, depending on the method you use to streamline requests.
+If you manage access to resources with access request conditions, there are a few more benefits:
+Control access to Okta admin role assignments
+After you configure admin role bundles and conditions, eligible requesters can request admin access from their dashboard. You can also specify the duration for which the requester is granted access to the admin role if their request is approved. See Access Requests for admin roles.
+Scalability and ease of configuration
+Reuse your existing Okta and Active Directory-sourced groups associated with an app in a condition to control its scope. You can reference more than one group in a condition. If you've configured entitlements and entitlement bundles for an app, you can use bundles to define the scope.
+Access request conditions also allow you to reuse an approval sequence in conditions for different apps. This means that you don't need to recreate the request routing flow for each app as you do with request types.
+Integration with the End-User Dashboard for requesters
+Requesters don't need to go to the Okta Access Requests web app in their End-User Dashboard and decide which request type to choose to get the access they need. They can go to the resource catalog of their End-User Dashboard, select the app's tile, and enter the required information to request access.
+If you've enabled Unified requester experience for your org, request types are also available as tiles on the End-User Dashboard for requesters.
+Personas
+
+Access Requests meets the needs of several different organizational roles.
+Role	Description
+Admin	A user with a standard super admin or access requests admin role assignment.
+Admins want to construct unique, no-code blueprints that ensure that stakeholders take appropriate actions before completing a request.
+Admins want to orchestrate automated request fulfillment so teams aren't responsible for managing low-risk access requests.
+Requester	Any user who requests access to a resource and is assigned to the resource after the required steps are completed. Requesters want to quickly request access to specific resources using common productivity tools such as chat or web.
+Request creator
+If a user submitted a request for someone else, they're referred to as the request creator. The person they requested the access for is the requester. The requester is the user who ultimately receives the access to the resource.
+Approver	A user who is responsible for acting on an approval task that's assigned to them. Approvers need clear visibility and context for requests so they understand what to approve and for whom.
+Approvers need to review approvals using common productivity tools such as chat or web to improve efficiency and resolve requests quickly.
+The user who's assigned as an approver must have an Active status in Okta. Otherwise, the task remains unassigned and may stall the request resolution.
+Task assignee	A user who is responsible for acting on a custom task or question assigned to them in a request.
+Request assignee
+A super admin, access requests admin, or a team member (for requests managed by a request type) who is assigned to manage a request's administrative aspects after it's submitted. They're responsible for managing things like unassigned steps or reassigning approvers to ensure that the request is quickly completed.
+For requests managed by conditions, Okta doesn't automatically assign request assignees. Super admins and access request admins can view or modify the request assignee in the Access Requests web app.
+For requests managed by a request type, request assignees are always members of the Access Requests team that owns the request type.

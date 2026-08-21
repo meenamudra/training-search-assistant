@@ -1,0 +1,26 @@
+Access request conditions
+
+You must be a super admin to create access request conditions. This is a three-step process.
+Configure access request conditions.
+Define who can request access. Specify the access level that they can request and how long the access should be granted. When the access request expires, the user's access is automatically revoked.
+Set up an approval sequence that governs the information a requester or approver needs to provide. An approval sequence is a series of steps (questions, approval tasks, and custom tasks) that the user must complete before the next one is initiated. For a requester to get access, they must complete all tasks successfully with all approvers granting approval.
+Define who should approve or deny the access request.
+Enable the condition.
+Optional. Configure settings for all access requests associated with the app. You can specify whether users can request access on behalf of other users. You can also allow (or allow with custom settings) or block access requests that cause a conflict between separation of duties rules for the requester.
+After you enable a condition, eligible requesters can request access from their dashboard. They can select from the available apps, enter the required information, and submit the request. Once they submit a request, the approval sequence is triggered and approvers are assigned and notified that they have a task that needs an action from them. After the approvers complete their tasks, users are granted or denied access automatically based on the approver's decision.
+You can also define user-friendly display names and descriptions for groups that are used in Access Requests. This makes it easier for requesters and approvers to understand the access level of the resource. If you change a group's profile attributes and want the change to take effect immediately, you must disable the conditions that include the group, and then enable them again. Otherwise, Okta refreshes individual app tiles on the End-User Dashboard twice daily.
+If a task in the request gets unassigned, the request assignee for that request can manage the request from the Okta Access Requests web app. Super or access request admins and request assignees can also escalate questions and tasks (custom, approval, or action) within a request to the task assignee's manager. Requesters can also escalate tasks within their access requests if you've enabled the Allow requesters to escalate tasks toggle on the Settings page. See Escalate tasks.
+You can set delegates for users or allow users to specify another user as a delegate to complete governance tasks. Governance tasks include access request approvals, questions, and tasks, and access certification campaign review items. This helps ensure that governance processes don't stall when approvers are unavailable or tasks need to be rerouted to a different stakeholder for a long period. See Governance delegates.
+Considerations
+
+If you're already subscribed to Okta Identity Governance, requests managed by conditions are different from requests managed by request types. Here's how requests managed by conditions differ:
+Okta marks these requests as private by default and you can't change the privacy setting. Private requests are visible only to admins, the people directly involved in the request (like assignee, task assignee, requester, and follower), and the members of the team on the request.
+Certain functions like Okta actions, automated tasks, integrations with Jira, and ServiceNow aren't available.
+If you limit the Request on behalf of setting to Only managers can request access for their reports, ensure that the managerId profile attribute for the user contains their manager's Okta ID or username.
+Requester experience:
+When you enable the Request on behalf of setting, requesters can request access for other users.
+They can't reopen requests.
+Request assignee experience:
+Only super admins can manage these requests. Request assignees aren't assigned automatically. Super admins and access request admins can view or modify the request assignee in the Access Requests web app.
+Request attributes like Team and Request Type aren't visible on the Request details view.
+When a step is assigned to a group, changes to the group that occur after the request aren't synced. For example, an admin added to an approval group after a request is submitted can't approve the request.
