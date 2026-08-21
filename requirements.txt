@@ -1,0 +1,9 @@
+streamlit
+pandas
+pymupdf
+pillow
+pytesseract
+numpy<2.0.0
+sentence-transformers==2.7.0
+torch==2.2.0
+chromadb
